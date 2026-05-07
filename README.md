@@ -33,7 +33,7 @@ ITAI-2372-AI-Portfolio/
 
 ---
 
-## 📝 Assignments & Case Studies
+##  Assignments & Case Studies
 
 ### A02 Recent Advancements & Future Trends in AI
 An overview of breakthroughs in large language models, transformer architectures, and multimodal systems. Covers open-source models (Meta's Llama, Mistral 7B), real-world applications in healthcare, finance, and robotics, and emerging ethical concerns including AI regulation and the EU AI Act.
