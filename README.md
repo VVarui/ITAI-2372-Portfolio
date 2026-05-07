@@ -1,206 +1,120 @@
-# Smart Home Support Agent
+# 🤖 ITAI 2372 — Artificial Intelligence: Ethics, Applications & Society
+### Emmanuel Igwilo | Houston Community College
 
-A RAG-based AI agent that helps users troubleshoot smart home devices using natural language queries.
-
----
-
-## Solo Project
-
-**Igwilo Emmanuel**  ITAI2376
+> A portfolio of coursework exploring real-world AI applications, ethical frameworks, and societal implications across industries.
 
 ---
 
-## Problem Statement
+## 📚 Course Overview
 
-Smart home ecosystems (Alexa, Google Home, SmartThings, etc.) are widely used but difficult to troubleshoot. Users face connectivity failures, unresponsive devices, and confusing error states  and support documentation is often too technical or scattered across manufacturer websites.
-
-**Target user:** Renters and homeowners who use smart home devices and want quick self-service support without reading lengthy manuals.
+This repository contains assignments, case studies, and class notes from **ITAI 2372**, covering the rapid advancement of artificial intelligence and its intersection with law, ethics, industry, and public policy. Topics range from large language models and machine learning architectures to algorithmic bias, regulation, and the future of AGI.
 
 ---
 
-## Option Chosen
+## 🗂️ Repository Structure
 
-**Option A: Single AI Agent**
-
-The agent was designed and planned in the Midterm and is now fully implemented.
+```
+ITAI-2372-AI-Portfolio/
+├── README.md
+├── assignments/
+│   ├── A02_Recent_Advancements_Future_Trends/
+│   ├── A03_Healthcare_Agriculture_ClassNotes/
+│   ├── A04_JPMorgan_Fraud_Detection/
+│   ├── AI_Entertainment_Spotify_CaseStudy/
+│   ├── FRT_FacialRecognition_LawEnforcement/
+│   ├── AI_Government_CMS_SmartCity/
+│   └── AGI_in_Healthcare/
+├── notes/
+│   ├── ai_finance_notes.md
+│   ├── ai_bias_agriculture_notes.md
+│   └── key_concepts.md
+└── resources/
+    └── links.md
+```
 
 ---
 
-## Architecture Overview
+## 📝 Assignments & Case Studies
 
-The agent follows a **ReAct (Reason + Act)** loop with two tools:
+### A02 — Recent Advancements & Future Trends in AI
+An overview of breakthroughs in large language models, transformer architectures, and multimodal systems. Covers open-source models (Meta's Llama, Mistral 7B), real-world applications in healthcare, finance, and robotics, and emerging ethical concerns including AI regulation and the EU AI Act.
 
-1. **category_tool** is the reasoning step. Before searching, the agent classifies the user's query into a device category (lighting, thermostat, camera, lock, etc.) using keyword matching. This is the "Reason" step.
+---
 
-2. **retrieval_tool** is the action step. Encodes the cleaned query using a SentenceTransformer model (`all-MiniLM-L6-v2`) into a 384-dimensional embedding, then searches a FAISS index for the top 3 most semantically similar known issues. This is the "Act" step.
+### A03 — AI Use Cases in Healthcare & Agriculture *(Class Notes)*
+Examines how AI is deployed in precision medicine and farming. Topics include AI-assisted surgery, personalized medicine, remote health monitoring via wearables, and precision agriculture (crop yield forecasting, computer vision monitoring). Also discusses the role of NIST in AI governance and the importance of staying current with AI regulation.
 
-The full loop is: **Observe ---> Reason (category_tool) ----> Act (retrieval_tool) ---> Respond**
+---
 
-A confidence threshold of 0.6 (cosine similarity) filters out weak matches so the agent returns "no confident match found" rather than a misleading answer.
+### A04 — AI in Fraud Detection: JPMorgan Chase Case Study
+A deep dive into how one of the world's largest banks uses machine learning, deep learning, real-time transaction monitoring, and NLP to combat financial fraud. Analyzes supervised and unsupervised learning models, discusses a 30–50% reduction in fraud losses versus rule-based systems, and addresses challenges including data privacy, algorithmic bias, model drift, and explainability.
 
-The UI is built with Gradio and displays the suggested fix, related issues, and a full agent reasoning trace per query.
+**Key Technologies:** Logistic Regression, Neural Networks, NLP, Real-Time Anomaly Detection
 
+---
 
-## Frameworks and Tools
+### AI in Entertainment — Spotify Case Study
+Examines Spotify's AI ecosystem across 602 million monthly users. Covers collaborative filtering, audio CNNs, the AI DJ feature, and generative content creation. Analyzes ethical implications including artist consent, algorithmic creativity distortion, misinformation amplification in podcasts, and stream farming fraud.
 
-| Component | Tool/Library |
+**Ethical Frameworks Applied:** Utilitarian analysis, Autonomy & Consent, Societal Impact
+
+---
+
+### Facial Recognition Technology (FRT) in Law Enforcement
+A critical examination of FRT deployment across police departments, border agencies, and surveillance networks. Reviews NIST audit findings on demographic accuracy disparities, documents wrongful arrests (Robert Williams, Michael Oliver, Nijeer Parks), and evaluates privacy, mass surveillance, and due process concerns.
+
+**Recommendations:** Binding accuracy standards, demographic parity testing, human-in-the-loop requirements, independent oversight bodies
+
+---
+
+### AI in Government — CMS Fraud Prevention & Smart City Infrastructure
+Two-part report covering: (1) the CMS Fraud Prevention System (FPS), which has identified ~$42 billion in Medicare/Medicaid fraud since 2011 at a 10–12x ROI; and (2) a proposed AI-driven smart city infrastructure management system that embeds equity as a primary optimization target.
+
+**AI Techniques:** Supervised Learning, Social Network Analysis, Predictive Scoring, NLP, LSTM Neural Networks, Fairness-Constrained Optimization
+
+---
+
+### AGI in Healthcare
+Explores the transformative potential of Artificial General Intelligence in medicine — from persistent longitudinal clinical intelligence and accelerated drug discovery to closing the global specialist gap. Critically analyzes risks including data privacy, bias at scale, and workforce displacement. Argues that responsible deployment requires privacy protections, bias auditing, and meaningful patient agency over data.
+
+---
+
+## 🗒️ Notes
+
+| Topic | Key Concepts |
 |---|---|
-| Embedding model | `sentence-transformers`  `all-MiniLM-L6-v2` |
-| Vector search | `faiss-cpu`  `IndexFlatIP` (cosine similarity) |
-| UI | `gradio` |
-| Deep learning backend | `torch` (underlying SentenceTransformer) |
-| Knowledge base | Custom JSON  40 smart home issue-resolution pairs |
-| Reasoning pattern | ReAct (Reason + Act) |
+| AI Bias & Inequity | Algorithmic discrimination, liability gaps, HIPAA compliance, over-reliance risks |
+| AI in Finance | Loan allocation, fraud detection, NLP pipelines, insurance claim automation |
+| AI in Agriculture | Precision farming, computer vision, yield forecasting, supply chain optimization |
 
 ---
 
-## Installation
+## 🔗 Key Resources
 
-**Requirements:** Python 3.10+
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
-
-# 2. Create and activate a virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate        # Mac/Linux
-venv\Scripts\activate           # Windows
-
-# 3. Install dependencies
-pip install -r requirements.txt
-```
-
-No API keys are required. The agent runs entirely on local open-source models.
+- [Meta Llama](https://llama.meta.com) — Open-source LLM
+- [Mistral AI](https://mistral.ai) — Efficient open-source models
+- [EU AI Act](https://artificialintelligenceact.eu) — Landmark AI regulation
+- [NIST AI Risk Management Framework](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
+- [Attention Is All You Need (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762) — Original transformer paper
+- [NIST Face Recognition Vendor Test (FRVT)](https://doi.org/10.6028/NIST.IR.8280) — Demographic bias in FRT
+- [Spotify Engineering Blog](https://engineering.atspotify.com) — How Spotify's recommendation system works
+- [CMS Fraud Prevention System](https://www.cms.gov/priorities/innovation/innovation-models/fraud-prevention-system)
 
 ---
 
-## How to Run
+## 🧠 Key Themes Across the Course
 
-Open `agent.ipynb` in Jupyter or Google Colab and run all cells in order.
-
-```bash
-# Local Jupyter
-jupyter notebook agent.ipynb
-```
-
-Or in Google Colab: upload `agent.ipynb`, then click **Runtime → Run all**.
-
-The Gradio interface will launch automatically after the final cell. A local URL (e.g. `http://127.0.0.1:7860`) will appear in the output.
+- **Algorithmic Bias** — Recurring across healthcare, law enforcement, finance, and government
+- **Transparency & Explainability** — The "black box" problem in high-stakes AI systems
+- **Regulation** — EU AI Act, NIST, HIPAA, Bank Secrecy Act, and gaps in FRT oversight
+- **Equity** — Ensuring AI benefits are distributed fairly across demographics and geographies
+- **Human Oversight** — The critical role of human-in-the-loop systems in consequential decisions
 
 ---
 
-## Example Usage
+## 👤 About
 
-**Example 1**
-- Input: `"My Alexa won't respond to voice commands"`
-- Category detected: `speaker`
-- Output: Speak clearly and close to the microphone. Check your device language settings. Ensure your internet connection is stable.
-- Confidence: 78%
-
-**Example 2**
-- Input: `"The camera keeps going offline"`
-- Category detected: `camera`
-- Output: Check Wi-Fi connection. Restart the camera. Ensure power supply is stable.
-- Confidence: 91%
-
-**Example 3**
-- Input: `"Motion sensor keeps triggering false alerts"`
-- Category detected: `sensor`
-- Output: Solution: Check for vibrations or loose mounting of the sensor. Detail: Ensure the sensor and magnet are firmly attached to the door/window frame.
-- Confidence: 83%
-
----
-
-## Known Limitations
-
-- **Small knowledge base:** The corpus contains 40 issue-resolution pairs. Queries outside these categories may fall below the confidence threshold and return no answer.
-- **No memory:** Each query is independent. The agent does not remember previous turns in a conversation.
-- **Static knowledge:** The knowledge base is a fixed JSON file. It does not update automatically when new device issues emerge.
-- **No generative responses:** The agent retrieves stored resolutions rather than generating natural-language answers. Adding a generative LLM layer is a planned improvement.
-
----
-
-## Demo
-[Watch the demo here](https://www.youtube.com/watch?v=Sv9HnbvPnKc)
-
-The demo shows the agent handling at least 3  scenarios end-to-end.
-
----
-
-## Repository Structure
-
-```
-agent.ipynb              # Main notebook — run this
-requirements.txt         # Python dependencies
-.env.example             # Environment variable template (no keys needed)
-.gitignore               # Git exclusions
-README.md                # This file
-data/
-  smart_home_corpus.json # Knowledge base (40 issue-resolution pairs)
-docs/
-  architecture.png       # Architecture diagram
-demo/
-  demo.mp4               # Screen recording (or link above)
-```
-
----
-
-## Deep Learning Connections
-
-**Transformers & Attention:** all-MiniLM-L6-v2 is a distilled Transformer encoder. It uses multi-head self-attention so every token in a query attends to every other token — capturing semantic equivalences like "won't turn on" ≈ "not responding" that bag-of-words models miss entirely.
-
-**Representation Learning & Embeddings:** The model was trained with contrastive learning to cluster semantically similar sentences in a 384-dimensional embedding space. Retrieval quality depends entirely on the quality of these learned representations, making this a direct application of the representation learning module.
-
----
-## Reflection
-
-### What worked
-The core RAG pipeline performed better than expected. Search using
-**all-MiniLM-L6-v2** handled informal phrasing well, queries like "my bulb
-keeps flickering" correctly matched "Light Not Turning On" without any exact
-keyword overlap. The confidence threshold (0.6) was effective at preventing
-the agent from returning weak or irrelevant matches, which was one of my
-original concerns. The Gradio interface came together quickly
-and the reasoning trace output made the agent's decision-making visible, which
-helped during debugging.
-
-### What did not work
-The **extract_issues_from_guide()** function initially collapsed entire JSON
-sections into single issue-resolution pairs, which meant multi-step resolutions
-lost their structure. Query cleaning (**clean_text()**) was also applied to
-resolution text before display, producing lowercase unpunctuated output that
-looked unprofessional. Also, **category_tool** uses simple keyword matching, which
-misclassifies queries with unusual phrasing  for example, "hub not syncing"
-is not caught by any category keyword and defaults to general.
-
-### Biggest technical challenge
-The hardest problem I faced was that **clean_text()** was being applied to queries at
-index-build time but not at query time, creating a mismatch between what was
-stored in the FAISS index and what was being searched. Retrieval scores were
-lower than they should have been because the query embeddings and index
-embeddings were generated from differently formatted text. Fixing this required
-me to trace the full pipeline from ingestion through retrieval to confirm where
-normalization was and was not being applied.
-
-### Path change from Midterm
-The overall architecture stayed the same as the blueprint. The main change
-was me adding a second tool (**category_tool**) to satisfy the two-tool requirement
-and to implement an explicit ReAct reasoning step. The
-embedding model was also upgraded from **paraphrase-MiniLM-L3-v2** to
-**all-MiniLM-L6-v2** as planned in Week 2.
-
-### What I would build next
-
-**The most valuable next step would be replacing the stored resolution retrieval
-with a generative LLM response. Expanding the knowledge base beyond 40 entries and adding
-IndexIVFFlat for faster approximate search at scale (1000+ entries) would also
-be proper as well.**
----
-## Citations
-
-- Hugging Face  all-MiniLM-L6-v2: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-- FAISS (Meta AI Research): https://github.com/facebookresearch/faiss
-- Sentence Transformers docs: https://www.sbert.net/docs/sentence_transformer/pretrained_models.html
-- Gradio docs: https://www.gradio.app/docs
+**Emmanuel Igwilo**
+Course: ITAI 2372 — Artificial Intelligence
+Institution: Houston Community College
+Instructor: Professor Devarakonda
