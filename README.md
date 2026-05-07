@@ -5,12 +5,12 @@
 
 ---
 
-## 📚 Course Overview
+##  Course Overview
 
 This repository contains assignments, case studies, and class notes from **ITAI 2372**, covering the rapid advancement of artificial intelligence and its intersection with law, ethics, industry, and public policy.
 ---
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 ITAI-2372-AI-Portfolio/
