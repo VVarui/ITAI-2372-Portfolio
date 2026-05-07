@@ -1,7 +1,6 @@
 #  ITAI 2372  Artificial Intelligence: Ethics, Applications & Society
 ### Emmanuel Igwilo | Houston Community College
 
-> A portfolio of coursework exploring real-world AI applications, ethical frameworks, and societal implications across industries.
 
 ---
 
