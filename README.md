@@ -1,4 +1,4 @@
-# 🤖 ITAI 2372 — Artificial Intelligence: Ethics, Applications & Society
+#  ITAI 2372  Artificial Intelligence: Ethics, Applications & Society
 ### Emmanuel Igwilo | Houston Community College
 
 > A portfolio of coursework exploring real-world AI applications, ethical frameworks, and societal implications across industries.
@@ -7,8 +7,7 @@
 
 ## 📚 Course Overview
 
-This repository contains assignments, case studies, and class notes from **ITAI 2372**, covering the rapid advancement of artificial intelligence and its intersection with law, ethics, industry, and public policy. Topics range from large language models and machine learning architectures to algorithmic bias, regulation, and the future of AGI.
-
+This repository contains assignments, case studies, and class notes from **ITAI 2372**, covering the rapid advancement of artificial intelligence and its intersection with law, ethics, industry, and public policy.
 ---
 
 ## 🗂️ Repository Structure
@@ -36,24 +35,24 @@ ITAI-2372-AI-Portfolio/
 
 ## 📝 Assignments & Case Studies
 
-### A02 — Recent Advancements & Future Trends in AI
+### A02 Recent Advancements & Future Trends in AI
 An overview of breakthroughs in large language models, transformer architectures, and multimodal systems. Covers open-source models (Meta's Llama, Mistral 7B), real-world applications in healthcare, finance, and robotics, and emerging ethical concerns including AI regulation and the EU AI Act.
 
 ---
 
-### A03 — AI Use Cases in Healthcare & Agriculture *(Class Notes)*
+### A03 AI Use Cases in Healthcare & Agriculture *(Class Notes)*
 Examines how AI is deployed in precision medicine and farming. Topics include AI-assisted surgery, personalized medicine, remote health monitoring via wearables, and precision agriculture (crop yield forecasting, computer vision monitoring). Also discusses the role of NIST in AI governance and the importance of staying current with AI regulation.
 
 ---
 
-### A04 — AI in Fraud Detection: JPMorgan Chase Case Study
+### A04  AI in Fraud Detection: JPMorgan Chase Case Study
 A deep dive into how one of the world's largest banks uses machine learning, deep learning, real-time transaction monitoring, and NLP to combat financial fraud. Analyzes supervised and unsupervised learning models, discusses a 30–50% reduction in fraud losses versus rule-based systems, and addresses challenges including data privacy, algorithmic bias, model drift, and explainability.
 
 **Key Technologies:** Logistic Regression, Neural Networks, NLP, Real-Time Anomaly Detection
 
 ---
 
-### AI in Entertainment — Spotify Case Study
+### AI in Entertainment  Spotify Case Study
 Examines Spotify's AI ecosystem across 602 million monthly users. Covers collaborative filtering, audio CNNs, the AI DJ feature, and generative content creation. Analyzes ethical implications including artist consent, algorithmic creativity distortion, misinformation amplification in podcasts, and stream farming fraud.
 
 **Ethical Frameworks Applied:** Utilitarian analysis, Autonomy & Consent, Societal Impact
@@ -63,11 +62,9 @@ Examines Spotify's AI ecosystem across 602 million monthly users. Covers collabo
 ### Facial Recognition Technology (FRT) in Law Enforcement
 A critical examination of FRT deployment across police departments, border agencies, and surveillance networks. Reviews NIST audit findings on demographic accuracy disparities, documents wrongful arrests (Robert Williams, Michael Oliver, Nijeer Parks), and evaluates privacy, mass surveillance, and due process concerns.
 
-**Recommendations:** Binding accuracy standards, demographic parity testing, human-in-the-loop requirements, independent oversight bodies
-
 ---
 
-### AI in Government — CMS Fraud Prevention & Smart City Infrastructure
+### AI in Government  CMS Fraud Prevention & Smart City Infrastructure
 Two-part report covering: (1) the CMS Fraud Prevention System (FPS), which has identified ~$42 billion in Medicare/Medicaid fraud since 2011 at a 10–12x ROI; and (2) a proposed AI-driven smart city infrastructure management system that embeds equity as a primary optimization target.
 
 **AI Techniques:** Supervised Learning, Social Network Analysis, Predictive Scoring, NLP, LSTM Neural Networks, Fairness-Constrained Optimization
@@ -79,7 +76,7 @@ Explores the transformative potential of Artificial General Intelligence in medi
 
 ---
 
-## 🗒️ Notes
+##  Notes
 
 | Topic | Key Concepts |
 |---|---|
@@ -89,7 +86,7 @@ Explores the transformative potential of Artificial General Intelligence in medi
 
 ---
 
-## 🔗 Key Resources
+##  Key Resources
 
 - [Meta Llama](https://llama.meta.com) — Open-source LLM
 - [Mistral AI](https://mistral.ai) — Efficient open-source models
@@ -102,19 +99,12 @@ Explores the transformative potential of Artificial General Intelligence in medi
 
 ---
 
-## 🧠 Key Themes Across the Course
+##  Key Themes Across the Course
 
-- **Algorithmic Bias** — Recurring across healthcare, law enforcement, finance, and government
-- **Transparency & Explainability** — The "black box" problem in high-stakes AI systems
-- **Regulation** — EU AI Act, NIST, HIPAA, Bank Secrecy Act, and gaps in FRT oversight
-- **Equity** — Ensuring AI benefits are distributed fairly across demographics and geographies
-- **Human Oversight** — The critical role of human-in-the-loop systems in consequential decisions
+- **Algorithmic Bias**  Recurring across healthcare, law enforcement, finance, and government
+- **Transparency & Explainability**  The "black box" problem in high-stakes AI systems
+- **Regulation**  EU AI Act, NIST, HIPAA, Bank Secrecy Act, and gaps in FRT oversight
+- **Equity**  Ensuring AI benefits are distributed fairly across demographics and geographies
+- **Human Oversight**  The critical role of human-in-the-loop systems in consequential decisions
 
 ---
-
-## 👤 About
-
-**Emmanuel Igwilo**
-Course: ITAI 2372 — Artificial Intelligence
-Institution: Houston Community College
-Instructor: Professor Devarakonda
